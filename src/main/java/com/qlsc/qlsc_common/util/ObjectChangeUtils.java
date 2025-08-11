@@ -1,4 +1,4 @@
-package com.example.qlsc_common.util;
+package com.qlsc.qlsc_common.util;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;

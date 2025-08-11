@@ -1,4 +1,4 @@
-package com.example.qlsc_common.response;
+package com.qlsc.qlsc_common.response;
 
 
 import lombok.*;
