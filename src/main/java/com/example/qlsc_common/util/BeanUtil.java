@@ -21,14 +21,13 @@ public class BeanUtil<T extends Serializable> {
         if (source == null) {
             return null;
         }
-        T t = null;
         try {
-            t = clazz.newInstance();
+            T t = clazz.getDeclaredConstructor().newInstance();
             BeanUtils.copyProperties(source, t);
-        } catch (Exception e) {
-            e.printStackTrace();
+            return t;
+        } catch (ReflectiveOperationException e) {
+            throw new RuntimeException("Error creating instance of " + clazz.getName(), e);
         }
-        return t;
     }
 
     public static <T> List<T> copyProperties(List<?> source, Class<T> clazz) {
@@ -39,10 +38,10 @@ public class BeanUtil<T extends Serializable> {
         for (Object o : source) {
             T t = null;
             try {
-                t = clazz.newInstance();
+                t = clazz.getDeclaredConstructor().newInstance();
                 BeanUtils.copyProperties(o, t);
             } catch (Exception e) {
-                e.printStackTrace();
+                throw new RuntimeException("Error creating instance of " + clazz.getName(), e);
             }
             res.add(t);
         }
@@ -63,7 +62,7 @@ public class BeanUtil<T extends Serializable> {
                 res.add(t);
             } catch (Exception e) {
                 // Có thể log chi tiết hơn ở đây
-                e.printStackTrace();
+                throw new RuntimeException("Error creating instance of " + clazz.getName(), e);
             }
         }
 
