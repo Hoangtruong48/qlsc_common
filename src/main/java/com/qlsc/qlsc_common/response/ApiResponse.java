@@ -13,6 +13,7 @@ public class ApiResponse<T> {
     int statusCode;
     String message;
     T data;
+    Long total;
 
     public void setSuccess() {
         this.statusCode = 0;
@@ -34,7 +35,7 @@ public class ApiResponse<T> {
         this.message = message;
     }
 
-    public void setDataSuccess(T data) {
+    public void setDataSuccess(T data, Long total) {
         this.data = data;
         this.statusCode = 0;
         message = "success";
