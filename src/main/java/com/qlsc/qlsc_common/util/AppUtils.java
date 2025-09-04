@@ -90,53 +90,6 @@ public class AppUtils {
         return (list == null || list.isEmpty());
     }
 
-    public static int parseInt(Object o, int defaultValue) {
-        if (o == null) {
-            return defaultValue;
-        }
-        try {
-            String str = String.valueOf(o);
-            if (str ==null || str.isEmpty()) {
-                return defaultValue;
-            }
-            return Integer.parseInt(str);
-        } catch (Exception ignore) {
-        }
-        return defaultValue;
-    }
-
-    public static Integer parseIntNew(Object object) {
-        if (object == null) {
-            return 0;
-        }
-        try {
-            double d = Double.parseDouble(object.toString());
-            return (int) d;
-        } catch (Exception ex) {
-            return 0;
-        }
-    }
-
-    public static Double parseDoubleNullObjectNew(Object input) {
-        if (input == null) return null;
-
-        if (input instanceof Number) {
-            return ((Number) input).doubleValue();
-        }
-
-        if (input instanceof String) {
-            String str = ((String) input).trim();
-            if (str.isEmpty()) return 0.0d;
-            try {
-                return Double.parseDouble(str);
-            } catch (NumberFormatException e) {
-                return 0.0d;
-            }
-        }
-
-        return 0.0d;
-    }
-
     public static String convertLongToDateStr(long epochMillis) {
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy")
                 .withZone(ZoneId.systemDefault());
