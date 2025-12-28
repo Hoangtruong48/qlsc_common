@@ -17,4 +17,5 @@ public class BookingCreatedEvent extends BaseSagaEvent {
     Integer status;
     Double price;
     String msg;
+    Long bookingId;
 }

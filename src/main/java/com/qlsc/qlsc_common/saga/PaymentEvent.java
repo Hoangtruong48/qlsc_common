@@ -10,5 +10,7 @@ import lombok.experimental.FieldDefaults;
 @Data
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class SendNotificationCommand extends BaseSagaCommand{
+public class PaymentEvent extends BaseSagaEvent {
+    Long bookingId;
+    Long paymentId;
 }

@@ -10,5 +10,6 @@ import lombok.experimental.FieldDefaults;
 @Data
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class PaymentFailedEvent extends BaseSagaEvent{
+public class PaymentCommand extends BaseSagaCommand {
+    String bookingId;
 }

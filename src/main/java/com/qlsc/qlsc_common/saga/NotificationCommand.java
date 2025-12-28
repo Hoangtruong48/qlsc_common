@@ -10,5 +10,10 @@ import lombok.experimental.FieldDefaults;
 @Data
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class StartPaymentCommand extends BaseSagaCommand{
+public class NotificationCommand extends BaseSagaCommand {
+    String message;
+    Integer status;
+    String bookingId;
+    String paymentId;
+
 }
