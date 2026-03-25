@@ -5,10 +5,13 @@ public class KafkaConstant {
     public static final String TOPIC_BOOKING_EVENT = "booking_event";
     public static final String TOPIC_PAYMENT_EVENT = "payment_event";
     public static final String TOPIC_NOTIFICATION_EVENT = "notification_event";
+    public static final String TOPIC_BOOKING_MULTI_THREAD = "booking_multi_thread";
 
     public static final String TOPIC_BOOKING_COMMAND = "booking_command";
     public static final String TOPIC_PAYMENT_COMMAND = "payment_command";
     public static final String TOPIC_NOTIFICATION_COMMAND = "notification_command";
+
+    public static final String TOPIC_FLASH_SALE = "topic_flash_sale";
 
     public static final String GROUP_BOOKING = "booking_group";
     public static final String GROUP_PAYMENT = "payment_group";
